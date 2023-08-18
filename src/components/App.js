@@ -19,4 +19,29 @@ function App() {
   );
 }
 
+import React, { useState } from 'react';
+import Header from './Header';
+import About from './About';
+import ArticleList from './ArticleList';
+
+function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false); // Initial state is light mode
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(prevMode => !prevMode);
+  };
+
+  const themeClass = isDarkMode ? 'dark' : 'light';
+
+  // ... Rest of your code ...
+
+  return (
+    <div className={`App ${themeClass}`}>
+      {/* ... Your components */}
+      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+    </div>
+  );
+}
+
 export default App;
+
